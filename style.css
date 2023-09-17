@@ -1,9 +1,18 @@
 #tituloPagina{
-    color: rgb(69, 2, 69);
+    color: rgb(255, 255, 255);
     text-shadow: 0 0 20px white;
     font-size: 4em;
-    font-family: 'Montserrat', sans-serif;
+    animation-name: example;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;  
 }
+
+@keyframes example {
+    from {text-shadow: 0 0 20px rgb(227, 217, 165); scale: 1.0; }
+    to { text-shadow: 0 0 20px rgb(247, 234, 173); scale: 1.04;}
+  }
+
 
 #inputBuscar, #inputComentario, #inputUsuario{
     background-color: rgba(0, 0, 0, 0.507);
@@ -34,7 +43,17 @@
     background-color: rgba(220, 235, 235, 0.219);
     padding: 20px;
     box-shadow: 0px 0px 120px rgba(255, 255, 255, 0.354);
+    animation-name: example2;
+    animation-duration: 9s;
+    animation-iteration-count: 1;
 }
+
+
+@keyframes example2 {
+    from {scale: 0.1; box-shadow: 0px 0px 120px rgba(255, 255, 255, 0.829);}
+    to {scale: 1.0;}
+  }
+
 
 #btnBuscar, #btnEnviar{
     background-color:  rgba(0, 0, 0, 0.507);
@@ -47,14 +66,14 @@
 }
 
 body{
-    background-image: url(/images/fondo.jpg);
+    background-image: url(/images/fondo2.jpg);
     background-size: 100%;
 }
 
 #contenedor{
     text-align: center;
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #contenedorResultados{
@@ -65,11 +84,8 @@ body{
 }
 
 img {
-
-    border-radius: 10px;
     box-shadow: 0 0 2000px rgba(238, 130, 238, 0.913);
-    max-width: 600px;
-
+    max-width: 800px;
 }
 
 .content-description{
@@ -93,6 +109,7 @@ p{
     max-width: 800px;
     margin: 0 auto;
     padding: 10px 2px;
+    width: 100%;
 }
 #contenedorEnviarComentario{
     text-align: center;
