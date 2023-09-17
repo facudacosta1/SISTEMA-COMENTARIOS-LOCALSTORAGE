@@ -6,6 +6,9 @@ const contenedorResultados = document.getElementById('contenedorResultados');
 const contenedorComentarios = document.getElementById('contenedorComentarios');
 const BASE_URL = 'https://images-api.nasa.gov/search?q=';
 
+document.addEventListener('DOMContentLoaded',function(){
+    
+})
 /*
 --------------------------------------------------------
 EVENTO AL BOTON BUSCAR
@@ -95,12 +98,17 @@ function mostrarComentarios(searchTerm) {
             const usuarioStrong = document.createElement('strong');
             usuarioStrong.textContent = `${element.usuario}: `;
 
+
             // Agrega el elemento en negrita y el comentario al párrafo
             comentarioP.appendChild(usuarioStrong);
             comentarioP.appendChild(document.createTextNode(element.comentario));
-
-            // Agrega el párrafo del comentario al contenedor de comentarios
-            contenedorComentarios.appendChild(comentarioP);
+              // Agrega el puntaje al párrafo del comentario
+              const puntajeSpan = document.createElement('span');
+              puntajeSpan.textContent = `, mi calificación es: ${element.puntaje}`;
+              comentarioP.appendChild(puntajeSpan);
+  
+              // Agrega el párrafo del comentario al contenedor de comentarios
+              contenedorComentarios.appendChild(comentarioP);
         });
     } else {
         console.log(`No se encontraron comentarios para ${searchTerm}`);
@@ -117,11 +125,13 @@ btnEnviar.addEventListener('click', function(e){
     e.preventDefault();
     const inputComentario = document.getElementById('inputComentario');
     const inputUsuario = document.getElementById('inputUsuario');
+    const inputRange = document.getElementById('inputRange');
     const searchTerm = inputBuscar.value.toLowerCase();
     
     let comentario = {
         "usuario": inputUsuario.value,
         "comentario": inputComentario.value,
+        "puntaje": inputRange.value,
     }
 
     // Verifica que los campos de usuario y comentario no estén vacíos antes de agregar el comentario

@@ -44,7 +44,7 @@
     padding: 20px;
     box-shadow: 0px 0px 120px rgba(255, 255, 255, 0.354);
     animation-name: example2;
-    animation-duration: 9s;
+    animation-duration: 5s;
     animation-iteration-count: 1;
 }
 
@@ -85,7 +85,8 @@ body{
 
 img {
     box-shadow: 0 0 2000px rgba(238, 130, 238, 0.913);
-    max-width: 800px;
+    max-width: 100%; /* Establece un ancho máximo del 100% */
+    height: auto; /* Mantiene la proporción de aspecto */
 }
 
 .content-description{
@@ -111,7 +112,23 @@ p{
     padding: 10px 2px;
     width: 100%;
 }
-#contenedorEnviarComentario{
-    text-align: center;
 
+#contenedorEnviarComentario {
+    max-width: 800px; /* Establece un ancho máximo */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 10px 2px;
+    width: 90%; /* Establece un ancho del 90% del contenedor padre */
+    text-align: center; /* Centra el contenido de texto */
+}
+
+.like-icon{
+    color: red;
+}
+
+#inputRange{
+    width: 100%;
+}
+
+label{
+    color: rgba(247, 227, 247, 0.726);
 }
